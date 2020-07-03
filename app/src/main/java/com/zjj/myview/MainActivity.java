@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Looper;
@@ -13,6 +14,8 @@ import android.util.LongSparseArray;
 import android.util.Printer;
 import android.view.View;
 import android.widget.Button;
+
+import com.zjj.myview.aspectjx.AspectActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +29,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.e("TAG","onCreate");
         setContentView(R.layout.activity_main);
-        Looper.getMainLooper().setMessageLogging(new Printer() {
+        findViewById(R.id.btn_aspect).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AspectActivity.class));
+            }
+        });
+       /* Looper.getMainLooper().setMessageLogging(new Printer() {
             long currentTime = -1;
 
             @Override
@@ -42,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-        });
+        });*/
         /*like_view = findViewById(R.id.like_view);
         like_view.setOnClickListener(new View.OnClickListener() {
             @Override

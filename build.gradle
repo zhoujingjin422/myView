@@ -2,7 +2,14 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        maven{
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven{
+            url 'https://maven.aliyun.com/repository/google'
+        }
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
@@ -15,7 +22,13 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        maven{
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven{
+            url 'https://maven.aliyun.com/repository/google'
+        }
     }
 }
 

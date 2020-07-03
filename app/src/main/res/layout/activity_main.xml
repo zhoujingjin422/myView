@@ -6,23 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color6"
+    <Button
+        android:id="@+id/btn_aspect"
+        android:layout_width="94dp"
+        android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="aspectJ"
+        app:layout_constraintVertical_bias="0.071" />
 
-    <com.zjj.myview.SplashLayout
-        android:id="@+id/splashLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--  <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/color6"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <com.zjj.myview.SplashLayout
+          android:id="@+id/splashLayout"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />-->
    <!-- <com.zjj.myview.LikeViewLayout
         android:id="@+id/like_view"
         android:layout_width="match_parent"
