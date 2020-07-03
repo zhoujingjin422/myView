@@ -30,5 +30,7 @@ public class AspectActivity extends AppCompatActivity {
 
     @CheckNet
     private void goNex() {
+        //如果那边给拦截了，这里就不会打印
+        Log.e(TAG, "goNex");
     }
 }

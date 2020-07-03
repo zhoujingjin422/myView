@@ -35,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AspectActivity.class));
             }
         });
+        findViewById(R.id.go_splash).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SplashActivity.class));
+            }
+        });
+     findViewById(R.id.go_like).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LikeActivity.class));
+            }
+        });
        /* Looper.getMainLooper().setMessageLogging(new Printer() {
             long currentTime = -1;
 
