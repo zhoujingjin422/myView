@@ -19,6 +19,10 @@
         <activity android:name=".aspectjx.AspectActivity"/>
         <activity android:name=".SplashActivity"/>
         <activity android:name=".LikeActivity"/>
+        <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".observer.ObserverActivity"/>
+        <activity android:name=".touch.TouchActivity"/>
+        <activity android:name=".touch.SinWaveActivity"/>
     </application>
 
 </manifest>

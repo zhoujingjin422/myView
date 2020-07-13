@@ -1,6 +1,7 @@
 package com.zjj.myview.aspectjx;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
@@ -15,7 +16,6 @@ import com.zjj.myview.R;
  */
 public class AspectActivity extends AppCompatActivity {
     private static final String TAG = "zhoujingjin";
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class AspectActivity extends AppCompatActivity {
                 goNex();
             }
         });
+
     }
 
     @CheckNet

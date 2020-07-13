@@ -16,6 +16,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.zjj.myview.aspectjx.AspectActivity;
+import com.zjj.myview.handler.HandlerActivity;
+import com.zjj.myview.observer.ObserverActivity;
+import com.zjj.myview.touch.SinWaveActivity;
+import com.zjj.myview.touch.TouchActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +51,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LikeActivity.class));
             }
         });
+      findViewById(R.id.go_handler).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SinWaveActivity.class));
+            }
+        });
+//      findViewById(R.id.go_touch).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, TouchActivity.class));
+//            }
+//        });
+//      findViewById(R.id.go_observer).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, ObserverActivity.class));
+//            }
+//        });
        /* Looper.getMainLooper().setMessageLogging(new Printer() {
             long currentTime = -1;
 
