@@ -10,4 +10,9 @@
     <color name="color5">#FFC107</color>
     <color name="color6">#FF9800</color>
     <color name="color7">#FF5722</color>
+    <color name="white30">#4Dffffff</color>
+    <color name="e54525">#e54525</color>
+    <color name="white65">#A1ffffff</color>
+    <color name="white">#fff</color>
+
 </resources>

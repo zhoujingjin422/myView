@@ -35,4 +35,19 @@
     <declare-styleable name="CircleView">
         <attr name="circle_color" format="color"/>
     </declare-styleable>
+    <declare-styleable name="UserLearnProgressView">
+        <attr name="blu_back_color" format="color"/>
+        <attr name="blu_progress_color" format="color"/>
+        <attr name="blu_text_level_size" format="dimension"/>
+        <attr name="blu_text_size" format="dimension"/>
+        <attr name="blu_progress_text_color" format="color"/>
+        <attr name="blu_total_text_color" format="color"/>
+        <attr name="blu_level_text_color" format="color"/>
+        <attr name="blu_level_src" format="reference"/>
+        <attr name="blu_level_text" format="string"/>
+        <attr name="blu_progress" format="integer"/>
+        <attr name="blu_total" format="integer"/>
+        <attr name="blu_back_height" format="dimension"/>
+        <attr name="blu_progress_height" format="dimension"/>
+    </declare-styleable>
 </resources>
