@@ -8,7 +8,7 @@ android {
         applicationId "com.zjj.myview"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
+        versionCode 3
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -36,6 +36,10 @@ android {
     //    dataBinding {
 //        enabled = true
 //    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 dependencies {
@@ -48,5 +52,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     //检测内存泄漏
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
-
+    //检测内存泄漏
+    //数据库room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+    //数据库room
 }
