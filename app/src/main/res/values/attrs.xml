@@ -35,4 +35,17 @@
     <declare-styleable name="CircleView">
         <attr name="circle_color" format="color"/>
     </declare-styleable>
+    <declare-styleable name="ThreeProgressView">
+        <attr name="tpv_total" format="integer"/>
+        <attr name="tpv_progress1_color" format="color"/>
+        <attr name="tpv_progress2_color" format="color"/>
+        <attr name="tpv_progress3_color" format="color"/>
+        <attr name="tpv_back_color" format="color"/>
+        <attr name="tpv_max_progress" format="integer"/>
+        <attr name="tpv_progress1" format="integer"/>
+        <attr name="tpv_progress2" format="integer"/>
+        <attr name="tpv_progress3" format="integer"/>
+        <attr name="tpv_show_text" format="boolean"/>
+        <attr name="tpv_back_height" format="dimension"/>
+    </declare-styleable>
 </resources>

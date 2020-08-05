@@ -172,6 +172,7 @@ public class SplashLayout  extends View {
                         with = (float) animation.getAnimatedValue();
                         Log.e("TAG", "with: "+with);
                         invalidate();
+                        invalidate();
                     }
                 });
                 valueAnimator.setDuration(1500);
