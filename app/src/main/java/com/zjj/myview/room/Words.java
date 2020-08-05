@@ -11,8 +11,8 @@ import androidx.room.PrimaryKey;
 //数据库实体类
 @Entity
 public class Words {
-    @PrimaryKey
-    private long _id;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     @ColumnInfo(name = "english_word")
     private String word;
     @ColumnInfo(name = "chinese_word")
@@ -23,12 +23,12 @@ public class Words {
         this.chineseMeaning = chineseMeaning;
     }
 
-    public long get_id() {
-        return _id;
+    public int getId() {
+        return id;
     }
 
-    public void set_id(long _id) {
-        this._id = _id;
+    public void setId(int _id) {
+        this.id = _id;
     }
 
     public String getWord() {
