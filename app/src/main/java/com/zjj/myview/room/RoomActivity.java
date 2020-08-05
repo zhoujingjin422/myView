@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.zjj.myview.databinding.ActivityRoomBinding;
 
 import java.util.List;
+import java.util.zip.Adler32;
 
 /**
  * @author : "zhoujingjin"
@@ -23,23 +25,22 @@ public class RoomActivity extends AppCompatActivity {
 
     private ActivityRoomBinding bind;
     private WordViewModel wordViewModel;
-
+    private RoomAdapter adapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bind = ActivityRoomBinding.inflate(getLayoutInflater());
         View view = bind.getRoot();
         setContentView(view);
+        bind.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new RoomAdapter();
+        bind.recyclerView.setAdapter(adapter);
         wordViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(WordViewModel.class);
-        bind.textView.setMovementMethod(ScrollingMovementMethod.getInstance());
         wordViewModel.getAllWORDS().observe(this, new Observer<List<Words>>() {
             @Override
             public void onChanged(List<Words> allWords) {
-                StringBuilder text= new StringBuilder();
-                for (Words words: allWords ) {
-                    text.append(words.getId()).append(";").append(words.getWord()).append("=").append(words.getChineseMeaning()).append("\n");
-                }
-                bind.textView.setText(text.toString());
+               adapter.setAllWords( wordViewModel.getAllWORDS().getValue());
+                adapter.notifyDataSetChanged();
             }
         });
         bind.buttonInsert.setOnClickListener(v->insertData());
