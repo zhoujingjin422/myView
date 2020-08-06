@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.LivePagedListBuilder;
+import androidx.paging.PagedList;
 
 import java.util.List;
 
@@ -14,14 +16,17 @@ import java.util.List;
 public class WordRepository {
 
     private  WordsDao wordsDao;
-    private  LiveData<List<Words>> allWORDS;
+    private  LiveData<PagedList<Words>> allWORDS;
     public WordRepository(Context context) {
         WordsDatabase wordsDatabase = WordsDatabase.getWordsDatabase(context.getApplicationContext());
         wordsDao = wordsDatabase.getWordsDao();
-        allWORDS = wordsDao.getWords("hi","世界");
+//        allWORDS = wordsDao.getWords("hi","世界");
+        allWORDS = new LivePagedListBuilder<>(
+                wordsDao.getAllWORDS(), /* page size */ 10).build();
+//        allWORDS = wordsDao.getAllWORDS();
     }
 
-    public LiveData<List<Words>> getAllWORDS() {
+    public LiveData<PagedList<Words>> getAllWORDS() {
         return allWORDS;
     }
 

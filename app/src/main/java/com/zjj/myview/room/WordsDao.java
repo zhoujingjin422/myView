@@ -1,6 +1,7 @@
 package com.zjj.myview.room;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -28,7 +29,9 @@ public interface WordsDao {
     void deleteAll();
 
     @Query("SELECT * FROM WORDS ORDER BY ID")
-    LiveData<List<Words>> getAllWORDS();
+//    DataSource.Factory<Integer,Words> getAllWORDS();
+    DataSource.Factory<Integer,Words> getAllWORDS();
+//    LiveData<List<Words>> getAllWORDS();
 
     @Query("select * from words where english_word =:name")
     LiveData<List<Words>> getWords(String name);

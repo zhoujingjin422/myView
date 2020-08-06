@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -36,13 +37,15 @@ public class RoomActivity extends AppCompatActivity {
         adapter = new RoomAdapter();
         bind.recyclerView.setAdapter(adapter);
         wordViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(WordViewModel.class);
-        wordViewModel.getAllWORDS().observe(this, new Observer<List<Words>>() {
-            @Override
-            public void onChanged(List<Words> allWords) {
-               adapter.setAllWords( wordViewModel.getAllWORDS().getValue());
-                adapter.notifyDataSetChanged();
-            }
-        });
+        wordViewModel.getAllWORDS().observe(this, adapter::submitList);
+
+        //        wordViewModel.getAllWORDS().observe(this, new Observer<List<Words>>() {
+//            @Override
+//            public void onChanged(List<Words> allWords) {
+//               adapter.setAllWords( wordViewModel.getAllWORDS().getValue());
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
         bind.buttonInsert.setOnClickListener(v->insertData());
         bind.buttonDeleteAll.setOnClickListener(v -> wordViewModel.deleteAll());
         bind.buttonUpdate.setOnClickListener(v -> {

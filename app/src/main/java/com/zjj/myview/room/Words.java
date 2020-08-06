@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 /**
  * @author : "zhoujingjin"
  * @timer : 2020/8/5
@@ -34,7 +36,6 @@ public class Words {
         this.word = word;
         this.chineseMeaning = chineseMeaning;
     }
-
     public int getId() {
         return id;
     }
