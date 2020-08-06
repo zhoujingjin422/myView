@@ -8,7 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.zjj.myview.annotation.ClickGap;
+
 import androidx.fragment.app.Fragment;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -31,6 +32,30 @@ public class SectionAspect {
     @Pointcut("execution(@com.zjj.myview.aspectjx.CheckNet * *(..))")
     public void checkNetBehavior(){
 
+    }
+    @Pointcut("execution(@com.zjj.myview.annotation.ClickGap * *(..))")
+    public void checkclickGap(){
+
+    }
+
+    private  long clickGapTime = 0;
+    private  final int CLICK_GAP_RESPONSE = 300;//800ms内不响应
+    @Around("checkclickGap()")
+    public void clickGap(ProceedingJoinPoint joinPoint) throws Throwable {
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        ClickGap clickGap = methodSignature.getMethod().getAnnotation(ClickGap.class);
+        if (clickGap!=null){
+            int age = clickGap.age();
+            String name = clickGap.name();
+            Log.e("TAG","name="+name+"age="+age);
+            long currentTimeMillis = System.currentTimeMillis();
+            if(currentTimeMillis-clickGapTime<CLICK_GAP_RESPONSE){
+                Log.e("TAG","拦截了一次");
+                return;
+            }
+            clickGapTime = currentTimeMillis;
+        }
+        joinPoint.proceed();
     }
     /**
      * 处理切面
