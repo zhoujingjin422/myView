@@ -18,7 +18,7 @@ public class WordRepository {
     public WordRepository(Context context) {
         WordsDatabase wordsDatabase = WordsDatabase.getWordsDatabase(context.getApplicationContext());
         wordsDao = wordsDatabase.getWordsDao();
-        allWORDS = wordsDao.getAllWORDS();
+        allWORDS = wordsDao.getWords("hi","世界");
     }
 
     public LiveData<List<Words>> getAllWORDS() {

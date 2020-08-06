@@ -29,4 +29,13 @@ public interface WordsDao {
 
     @Query("SELECT * FROM WORDS ORDER BY ID")
     LiveData<List<Words>> getAllWORDS();
+
+    @Query("select * from words where english_word =:name")
+    LiveData<List<Words>> getWords(String name);
+
+    @Query("select * from words where english_word =:name or chinese_word =:chinese_word")
+    LiveData<List<Words>> getWords(String name,String chinese_word);
+
+    @Query("select * from words where english_word =:name and chinese_word =:chinese_word")
+    LiveData<List<Words>> getWordWith(String name,String chinese_word);
 }

@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
  * @timer : 2020/8/5
  */
 //数据库实体类
-@Entity
+@Entity(tableName = "Words")
 public class Words {
     @PrimaryKey(autoGenerate = true)
     private int id;
